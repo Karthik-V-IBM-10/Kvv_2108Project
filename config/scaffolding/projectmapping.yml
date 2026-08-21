@@ -1,0 +1,10 @@
+version: "1.0"
+projectName: Kvv_2108Project
+runtimes:
+- runtimeAlias: Cloud Designtime
+  assets:
+  - name: 180cdt Workflow
+    type: workflow
+    uid: fl9bfb991cf5754537b5a3d5b677785114
+    stepId: a0
+    reference: SIQA_TimeoutTest:delayfor180Sec
