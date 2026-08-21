@@ -32,6 +32,7 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: WmJDBCAdapter
+  version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 security:
@@ -164,16 +165,25 @@ configurationVariables:
   : "1000"
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.transactionType
   : NO_TRANSACTION
+  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.maximumPoolSize
+  : "10"
   jdbcfunc.SAPTxStore.failFastMode: false
   jdbc.SAP TxStore Pool.poolThreshold: "0"
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.portNumber
   : "1433"
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.poolable
   : "false"
+  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.serverName
+  : 9.60.195.99
+  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://adapter-mysql-80-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
   jdbc.SAP TxStore Pool.spyenabled: "false"
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.datasourceClass
   : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
+  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.startupBackoffSecs
+  : "10"
   jdbc.SAP TxStore Pool.useSSL: "false"
+  jdbc.SAP TxStore Pool.waitingThread: "10"
+  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionEnabled
   : "false"
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.blockingTimeout
@@ -191,34 +201,25 @@ configurationVariables:
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.password
   : "{AES}X4QCAWgjWkTdMQvFA5XaqGmK1wuN3U1rA1B0VhuZoUw="
   jdbc.SAP TxStore Pool.snoopenabled: "false"
-  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.networkProtocol
-  : tcp
-  jdbc.SAP TxStore Pool.expireTime: "60000"
-  jdbc.SAP TxStore Pool.minConns: "5"
-  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.user
-  : sa
-  jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
-  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
-  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.maximumPoolSize
-  : "10"
-  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.serverName
-  : 9.60.195.99
-  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://adapter-mysql-80-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
-  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.startupBackoffSecs
-  : "10"
-  jdbc.SAP TxStore Pool.waitingThread: "10"
-  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
   jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.keyStore
   : ""
+  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.networkProtocol
+  : tcp
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.driverType
   : Progress® DataDirect®
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.startupRetryCount
   : "0"
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.dbType
   : MSSQL
+  jdbc.SAP TxStore Pool.expireTime: "60000"
+  jdbc.SAP TxStore Pool.minConns: "5"
   jdbc.SAP TxStore Pool.userid: sapuser
+  ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.user
+  : sa
+  jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionSettings.databaseName
   : SIQACloud
   ? artConnection.Kvv_2108Project.project.kvv_2108.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.mssql.connectionManagerSettings.heartBeatInterval
   : "0"
+  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
